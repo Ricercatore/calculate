@@ -1,16 +1,3 @@
-/*
-
-Write a program to read 10 numbers from keyboard and store them in an array and calculate their sum, average, min and max values.
-
-A resposta para este e para outros problemas é sempre "depende".
-
-g++ -Wall -std=c++20 -O3 calcule_s01.cpp -o calcule_s01.exe
-
-strip calcule.exe
-termux-elf-cleaner calcule.exe
-
-*/
-
 #include <iostream>
 
 using namespace std;
