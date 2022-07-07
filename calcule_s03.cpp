@@ -10,19 +10,19 @@ class Calculate {
             this->number.push_back( number );
         }
 
-        const float getSum() {
+        const float getSum() const {
             return accumulate( number.begin(), number.end(), 0.0 );
         };
         
-        const float getAverage() {
+        const float getAverage() const {
             return getSum() / number.size();
         };
         
-        const float getMin() {
+        const float getMin() const {
             return *minmax_element( number.begin(), number.end() ).first;
         };
         
-        const float getMax() {
+        const float getMax() const {
             return *minmax_element( number.begin(), number.end() ).second;
         };
         
