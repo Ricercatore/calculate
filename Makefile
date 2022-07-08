@@ -1,32 +1,12 @@
-calcule_s01.exe: calcule_s01.o
+# make ver=NN
+
+calcule_s$(ver).exe: calcule_s$(ver).o
 	@echo "Linking..."
 	@$(CXX) $< -Os -o $@
 	@strip $@
 	-@termux-elf-cleaner $@
 	@echo "Done"
 
-calcule_s01.o: calcule_s01.cpp
+calcule_s$(ver).o: calcule_s$(ver).cpp
 	@echo "Compiling... $*"
-	@$(CXX) --std=c++23 -O3 -Wall -c $< -o $@
-
-calcule_s02.exe: calcule_s02.o
-	@echo "Linking..."
-	@$(CXX) $< -Os -o $@
-	@strip $@
-	-@termux-elf-cleaner $@
-	@echo "Done"
-
-calcule_s02.o: calcule_s02.cpp
-	@echo "Compiling... $*"
-	@$(CXX) --std=c++23 -O3 -Wall -c $< -o $@
-
-calcule_s03.exe: calcule_s03.o
-	@echo "Linking..."
-	@$(CXX) $< -Os -o $@
-	@strip $@
-	-@termux-elf-cleaner $@
-	@echo "Done"
-
-calcule_s03.o: calcule_s03.cpp
-	@echo "Compiling... $*"
-	@$(CXX) --std=c++23 -O3 -Wall -c $< -o $@
+	@$(CXX) --std=c++20 -O3 -Wall -c $< -o $@
