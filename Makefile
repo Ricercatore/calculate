@@ -1,6 +1,6 @@
-# make ver=NN
+# make s=NN
 
-calcule_s$(ver).exe: calcule_s$(ver).o
+calcule_s$(s).exe: calcule_s$(s).o
 	@echo "Linking..."
 	@$(CXX) $< -Os -o $@
 	@strip $@
@@ -9,6 +9,10 @@ ifdef android
 endif
 	@echo "Done"
 
-calcule_s$(ver).o: calcule_s$(ver).cpp
+calcule_s$(s).o: calcule_s$(s).cpp
 	@echo "Compiling... $*"
 	@$(CXX) --std=c++20 -O3 -Wall -c $< -o $@
+
+clean:
+	@echo "Cleaning..."
+	@rm -f *.exe *.o
