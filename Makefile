@@ -1,4 +1,4 @@
-# make s=NN
+# make s=NN android=0
 
 calcule_s$(s).exe: calcule_s$(s).o
 	@echo "Linking..."
