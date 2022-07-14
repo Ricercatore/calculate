@@ -1,11 +1,11 @@
-# make s=NN android=0
+# make s=NN
 
 calcule_s$(s).exe: calcule_s$(s).o
 	@echo "Linking..."
 	@$(CXX) $< -Os -o $@
 	@strip $@
-ifdef android
-	-@termux-elf-cleaner $@
+ifneq (, $(shell which termux-elf-cleaner))
+	@termux-elf-cleaner $@ >/dev/null
 endif
 	@echo "Done"
 
@@ -15,4 +15,4 @@ calcule_s$(s).o: calcule_s$(s).cpp
 
 clean:
 	@echo "Cleaning..."
-	@rm -f *.exe *.o
+	@$(RM) *.exe *.o
